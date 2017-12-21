@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:22:26 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/19 16:04:50 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2017/12/21 22:15:36 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -50,6 +50,7 @@ char			*ft_ltoa_base(long n, int base)
 		out[len - i] = hexa[n % base];
 		n /= base;
 	}
+	free(hexa);
 	out[len] = '\0';
 	return (out);
 }
