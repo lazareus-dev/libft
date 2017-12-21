@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:22:26 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/17 19:20:30 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2017/12/08 18:37:55 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,40 +19,39 @@ static long		ft_abs(int n)
 	return ((n < 0) ? (long)-n : (long)n);
 }
 
-static int		ft_nb_len(int n)
+static int		ft_nbr_len_base(int n, int base)
 {
 	int	len;
 
 	len = 1;
-	while ((n /= 10) != 0)
+	while ((n /= base) != 0)
 		len++;
 	return (len);
 }
 
-char			*ft_itoa(int n)
+char			*ft_itoa_base(int n, int base)
 {
 	int		i;
-	long	val;
 	int		len;
 	char	*out;
+	char	*hexa;
 
+	if (base == 10)
+		return (ft_itoa(n));
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	len = ft_nb_len(n);
-	if (n < 0)
-		len++;
-	out = (char *)malloc(sizeof(char) * len + 1);
-	if (!out)
+	if (!(hexa = ft_strdup("0123456789abcdef")))
+		return (NULL);
+	n = ft_abs(n);
+	len = ft_nbr_len_base(n, base);
+	if(!(out = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
 	i = 0;
-	val = ft_abs(n);
 	while (i++ < len)
 	{
-		out[len - i] = ((val % 10) + '0');
-		val /= 10;
+		out[len - i] = hexa[n % base];
+		n /= base;
 	}
-	if (n < 0)
-		out[0] = '-';
 	out[len] = '\0';
 	return (out);
 }

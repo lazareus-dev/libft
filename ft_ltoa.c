@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_itoa.c                                        .::    .:/ .      .::   */
+/*   ft_ltoa.c                                        .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/24 18:22:26 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/17 19:20:30 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/12/12 12:39:49 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/17 19:21:02 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -14,12 +14,12 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static long		ft_abs(int n)
+static long		ft_abs(long n)
 {
-	return ((n < 0) ? (long)-n : (long)n);
+	return ((n < 0) ? -n : n);
 }
 
-static int		ft_nb_len(int n)
+static int		ft_nb_len(long n)
 {
 	int	len;
 
@@ -29,15 +29,13 @@ static int		ft_nb_len(int n)
 	return (len);
 }
 
-char			*ft_itoa(int n)
+char			*ft_ltoa(long n)
 {
 	int		i;
 	long	val;
 	int		len;
 	char	*out;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	len = ft_nb_len(n);
 	if (n < 0)
 		len++;

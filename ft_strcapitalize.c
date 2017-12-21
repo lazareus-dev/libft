@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_atoi.c                                        .::    .:/ .      .::   */
+/*   ft_strcapitalize.c                               .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/24 18:22:24 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/11/24 18:22:24 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/12/09 16:32:54 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/11 20:14:57 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		ft_atoi(char *s)
+#include "libft.h"
+
+void	ft_strcapitalize(char *s)
 {
 	int i;
-	int res;
-	int sign;
 
 	i = 0;
-	res = 0;
-	sign = 1;
-	while (s[i] == '\t' || s[i] == '\n' || s[i] == '\r' || s[i] == '\v'
-			|| s[i] == '\f' || s[i] == ' ')
-		i++;
-	if (s[i] == '-')
-		sign = -sign;
-	if (s[i] == '-' || s[i] == '+')
-		i++;
-	while (s[i] >= '0' && s[i] <= '9')
+	while (s[i])
 	{
-		res = (10 * res + (s[i] - '0'));
+		if (ft_islower(s[i]))
+			s[i] -= 32;
 		i++;
 	}
-	return (res * sign);
 }

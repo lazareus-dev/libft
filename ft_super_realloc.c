@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_atoi.c                                        .::    .:/ .      .::   */
+/*   ft_super_realloc.c                               .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/24 18:22:24 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/11/24 18:22:24 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/12/12 19:49:31 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/12 19:49:36 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		ft_atoi(char *s)
-{
-	int i;
-	int res;
-	int sign;
+#include "libft.h"
+#include <stdlib.h>
 
-	i = 0;
-	res = 0;
-	sign = 1;
-	while (s[i] == '\t' || s[i] == '\n' || s[i] == '\r' || s[i] == '\v'
-			|| s[i] == '\f' || s[i] == ' ')
-		i++;
-	if (s[i] == '-')
-		sign = -sign;
-	if (s[i] == '-' || s[i] == '+')
-		i++;
-	while (s[i] >= '0' && s[i] <= '9')
+char	*ft_super_realloc(char *s1, char *s2)
+{
+	char	*tab_out;
+	size_t	len;
+
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	tab_out = ft_strnew(len);
+	if (!tab_out)
+		return (NULL);
+	if (s1)
 	{
-		res = (10 * res + (s[i] - '0'));
-		i++;
+		ft_strcpy(tab_out, s1);
+		ft_strcat(tab_out, s2);
 	}
-	return (res * sign);
+	free(s1);
+	free(s2);
+	return (tab_out);
 }

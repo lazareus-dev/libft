@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_atoi.c                                        .::    .:/ .      .::   */
+/*   ft_putllnbr.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/24 18:22:24 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/11/24 18:22:24 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/11/24 18:22:29 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/17 19:11:04 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		ft_atoi(char *s)
-{
-	int i;
-	int res;
-	int sign;
+#include "libft.h"
 
-	i = 0;
-	res = 0;
-	sign = 1;
-	while (s[i] == '\t' || s[i] == '\n' || s[i] == '\r' || s[i] == '\v'
-			|| s[i] == '\f' || s[i] == ' ')
-		i++;
-	if (s[i] == '-')
-		sign = -sign;
-	if (s[i] == '-' || s[i] == '+')
-		i++;
-	while (s[i] >= '0' && s[i] <= '9')
+void	ft_putllnbr(long long n)
+{
+	if (n == -9223372036854775807)
 	{
-		res = (10 * res + (s[i] - '0'));
-		i++;
+		ft_putchar('-');
+		ft_putchar('9');
+		ft_putllnbr(223372036854775807);
 	}
-	return (res * sign);
+	else
+	{
+		if (n < 0)
+		{
+			ft_putchar('-');
+			n = -n;
+		}
+		if (n < 10)
+		{
+			ft_putchar(n + '0');
+		}
+		if (n > 9)
+		{
+			ft_putllnbr(n / 10);
+			ft_putchar(n % 10 + '0');
+		}
+	}
 }

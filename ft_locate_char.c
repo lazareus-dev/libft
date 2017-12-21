@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_atoi.c                                        .::    .:/ .      .::   */
+/*   ft_locate_char.c                                 .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/24 18:22:24 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/11/24 18:22:24 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/12/08 15:20:39 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/08 15:23:27 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		ft_atoi(char *s)
+#include "libft.h"
+
+size_t	ft_locate_char(const char *str, char c)
 {
-	int i;
-	int res;
-	int sign;
+	size_t  i;
 
 	i = 0;
-	res = 0;
-	sign = 1;
-	while (s[i] == '\t' || s[i] == '\n' || s[i] == '\r' || s[i] == '\v'
-			|| s[i] == '\f' || s[i] == ' ')
+	while (str[i] && str[i] != c)
 		i++;
-	if (s[i] == '-')
-		sign = -sign;
-	if (s[i] == '-' || s[i] == '+')
-		i++;
-	while (s[i] >= '0' && s[i] <= '9')
-	{
-		res = (10 * res + (s[i] - '0'));
-		i++;
-	}
-	return (res * sign);
+	if (str[i] == c)
+		return (i);
+	else
+		return (-1);
 }

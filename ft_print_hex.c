@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_atoi.c                                        .::    .:/ .      .::   */
+/*   ft_print_hex.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/24 18:22:24 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/11/24 18:22:24 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/12/18 19:01:56 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/18 19:02:48 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		ft_atoi(char *s)
+void	print_hex(unsigned int n)
 {
-	int i;
-	int res;
-	int sign;
+	char hexa[16] = "0123456789abcdef";
 
-	i = 0;
-	res = 0;
-	sign = 1;
-	while (s[i] == '\t' || s[i] == '\n' || s[i] == '\r' || s[i] == '\v'
-			|| s[i] == '\f' || s[i] == ' ')
-		i++;
-	if (s[i] == '-')
-		sign = -sign;
-	if (s[i] == '-' || s[i] == '+')
-		i++;
-	while (s[i] >= '0' && s[i] <= '9')
-	{
-		res = (10 * res + (s[i] - '0'));
-		i++;
-	}
-	return (res * sign);
+	if (n >= 16)
+		print_hex(n / 16);
+	ft_putchar(hexa[n % 16]);
 }

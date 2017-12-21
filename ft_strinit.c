@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_atoi.c                                        .::    .:/ .      .::   */
+/*   ft_strinit.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/24 18:22:24 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/11/24 18:22:24 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/12/14 18:10:36 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/14 18:11:13 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		ft_atoi(char *s)
-{
-	int i;
-	int res;
-	int sign;
+#include <stdlib.h>
 
+char	*ft_strinit(size_t size, char c)
+{
+	char	*str;
+	size_t	i;
+
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
-	res = 0;
-	sign = 1;
-	while (s[i] == '\t' || s[i] == '\n' || s[i] == '\r' || s[i] == '\v'
-			|| s[i] == '\f' || s[i] == ' ')
-		i++;
-	if (s[i] == '-')
-		sign = -sign;
-	if (s[i] == '-' || s[i] == '+')
-		i++;
-	while (s[i] >= '0' && s[i] <= '9')
+	while (i <= size)
 	{
-		res = (10 * res + (s[i] - '0'));
+		str[i] = c;
 		i++;
 	}
-	return (res * sign);
+	return (str);
 }
