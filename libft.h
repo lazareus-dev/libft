@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/22 12:44:30 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2017/12/22 20:01:02 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,6 +15,7 @@
 # define _LIBFT_H
 
 # include <string.h>
+# include <wchar.h>
 
 typedef struct		s_list
 {
@@ -47,6 +48,8 @@ void				*ft_memrealloc(void *s1, void *s2, size_t size);
 void				ft_memdel(void **ap);
 
 size_t				ft_strlen(char const *s1);
+size_t				ft_wcslen(const wchar_t *s);
+void				ft_countunichar(unsigned warg, size_t *ret);
 char				*ft_strdup(char const *s1);
 char				*ft_strndup(const char *s, size_t n);
 int					ft_strcmp(char const *s1, char const *s2);
