@@ -6,7 +6,7 @@
 #    By: tle-coza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 11:09:59 by tle-coza          #+#    #+#              #
-#    Updated: 2017/12/19 16:05:35 by tle-coza    ###    #+. /#+    ###.fr      #
+#    Updated: 2017/12/22 12:44:43 by tle-coza    ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	   ft_realloc.c ft_matricealloc.c ft_memrealloc.c ft_strndup.c \
 	   ft_locate_char.c ft_itoa_base.c ft_append_char.c ft_strcapitalize.c \
 	   ft_ltoa.c ft_super_realloc.c ft_strinit.c ft_putllnbr.c ft_nbr_len.c \
-	   ft_abs_ptr.c ft_putnchar.c ft_ltoa_base.c
+	   ft_abs_ptr.c ft_putnchar.c ft_ltoa_base.c print_bits.c
 
 OBJS = $(SRCS:.c=.o)
 
