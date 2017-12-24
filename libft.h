@@ -48,8 +48,9 @@ void				*ft_memrealloc(void *s1, void *s2, size_t size);
 void				ft_memdel(void **ap);
 
 size_t				ft_strlen(char const *s1);
-size_t				ft_wcslen(const wchar_t *s);
-void				ft_countunichar(unsigned warg, size_t *ret);
+size_t				ft_wcslen(const wchar_t *ws);
+size_t				ft_wsbytelen(const wchar_t *ws);
+size_t				ft_wcbytelen(wchar_t wchar);
 char				*ft_strdup(char const *s1);
 char				*ft_strndup(const char *s, size_t n);
 int					ft_strcmp(char const *s1, char const *s2);
@@ -84,7 +85,7 @@ char				*ft_append_char(char *s1, char c);
 void				ft_strcapitalize(char *s);
 
 void				**ft_matricealloc(size_t d1, size_t d2);
-void				ft_putchar(char c);
+int				ft_putchar(char c);
 void				ft_putnchar(char c, int n);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);

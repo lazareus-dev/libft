@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   print_bits.c                                     .::    .:/ .      .::   */
+/*   ft_wcbytelen.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/12/22 12:43:23 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/22 12:43:47 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/12/22 19:57:28 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/22 20:13:38 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	print_bits(unsigned char octet)
+size_t	ft_wcbytelen(wchar_t c)
 {
-	int i;
+	size_t	len;
 
-	i = 128;
-	while (i >= 0)
-	{
-		if (octet / i == 1)
-		{
-			write (1, "1", 1);
-			octet -= i;
-		}
-		else
-			write (1, "0", 1);
-		i /= 2;
-	}
+	len = 0;
+	if (c < 0x80)
+		len +=1;
+	else if (c <= 0x7FF)
+		len += 2;
+	else if (c <= 0xFFFF)
+		len += 3;
+	else if (c <= 0x10FFFF)
+		len += 4;
+
+	return (len);
 }
