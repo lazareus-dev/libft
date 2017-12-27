@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/22 20:01:02 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2017/12/27 12:29:25 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -125,5 +125,6 @@ int					ft_str_is_printable(char *s);
 size_t				ft_locate_char(const char *str, char c);
 
 long				ft_abs_ptr(void *ptr);
+int					ft_abs_int(int nbr);
 
 #endif

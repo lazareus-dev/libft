@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_abs_ptr.c                                     .::    .:/ .      .::   */
+/*   ft_abs.c                                         .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/12/27 12:32:08 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/27 12:32:13 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/12/27 12:28:48 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/27 12:28:50 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_abs_ptr(void *nbr)
+int	ft_abs_int(int nbr)
 {
-	long val;
-
-	val = *((long *)nbr);
-	if (val < 0)
-		return (-val);
+	if (nbr < 0)
+		return (-nbr);
 	else
-		return (val);
+		return (nbr);
 }
