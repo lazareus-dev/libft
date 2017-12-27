@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/27 12:29:25 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2017/12/27 14:14:19 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -85,8 +85,8 @@ char				*ft_append_char(char *s1, char c);
 void				ft_strcapitalize(char *s);
 
 void				**ft_matricealloc(size_t d1, size_t d2);
-int				ft_putchar(char c);
-void				ft_putnchar(char c, int n);
+int					ft_putchar(char c);
+int					ft_putnchar(char c, int n);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
