@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_locate_char.c                                 .::    .:/ .      .::   */
+/*   ft_nbr_len_base.c                                .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/12/08 15:20:39 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/27 19:40:28 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/12/28 16:41:06 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/28 16:46:07 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_locate_char(const char *str, char c)
+size_t	ft_nbr_len_base(uintmax_t nbr, int base)
 {
-	size_t	i;
+	size_t	len;
 
-	i = 0;
-	while (str[i] && str[i] != c)
-		i++;
-	if (str[i] == c)
-		return (i);
-	else
-		return (-1);
+	len = 1;
+	while (nbr /= base)
+		len++;
+	return (len);
 }

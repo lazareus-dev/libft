@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/27 14:14:19 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/01/09 20:51:25 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,6 +16,7 @@
 
 # include <string.h>
 # include <wchar.h>
+# include <stdlib.h>
 
 typedef struct		s_list
 {
@@ -35,7 +36,7 @@ int					ft_atoi(char *s);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(int n, int base);
 char				*ft_ltoa(long n);
-char				*ft_ltoa_base(long n, int base);
+char				*ft_ltoa_base(long long n, int base);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
@@ -49,8 +50,8 @@ void				ft_memdel(void **ap);
 
 size_t				ft_strlen(char const *s1);
 size_t				ft_wcslen(const wchar_t *ws);
-size_t				ft_wsbytelen(const wchar_t *ws);
-size_t				ft_wcbytelen(wchar_t wchar);
+int					ft_wsbytelen(const wchar_t *ws);
+int					ft_wcbytelen(wchar_t wchar);
 char				*ft_strdup(char const *s1);
 char				*ft_strndup(const char *s, size_t n);
 int					ft_strcmp(char const *s1, char const *s2);
@@ -60,6 +61,7 @@ char				*ft_strncpy(char *dst, char const *src, size_t len);
 char				*ft_strcat(char *s1, char const *s2);
 char				*ft_strncat(char *s1, char const *s2, size_t n);
 size_t				ft_strlcat(char *dst, char const *src, size_t dstsize);
+int					ft_locate_char(const char *str, char c);
 char				*ft_strchr(char const *s, int c);
 char				*ft_strrchr(char const *s, int c);
 char				*ft_strstr(char const *haystack, char const *needle);
@@ -90,7 +92,7 @@ int					ft_putnchar(char c, int n);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
-void				ft_putllnbr(long long n);
+void				ft_putllnbr(intmax_t n);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
@@ -122,9 +124,19 @@ int					ft_str_is_alpha(char *s);
 int					ft_str_is_numeric(char *s);
 int					ft_str_is_printable(char *s);
 
-size_t				ft_locate_char(const char *str, char c);
-
 long				ft_abs_ptr(void *ptr);
 int					ft_abs_int(int nbr);
+
+void				ft_putnbrbase(uintmax_t nbr, char *base);
+void				print_hex(unsigned long long n);
+size_t				ft_nbr_len_base(uintmax_t nb, int base);
+int					printf_nbrlen_base(uintmax_t nbr, char *base);
+char				*ft_get_stdout(int *pfd, int *save);
+
+int					ft_putwchar(wchar_t wc);
+int					ft_putwstr(wchar_t *wc);
+int					ft_putnwstr(wchar_t *wc, int n);
+wchar_t				*ft_putnbytewstr(wchar_t *wc, int n);
+int					ft_nbprintable(wchar_t *wc, int n);
 
 #endif

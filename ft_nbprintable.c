@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_locate_char.c                                 .::    .:/ .      .::   */
+/*   ft_nbprintable.c                                 .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/12/08 15:20:39 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/27 19:40:28 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/01/02 17:35:54 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/01/09 20:09:00 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_locate_char(const char *str, char c)
+int		ft_nbprintable(wchar_t *str, int n)
 {
-	size_t	i;
+	int	bytes;
+	int wclen;
+	int i;
 
 	i = 0;
-	while (str[i] && str[i] != c)
+	wclen = 0;
+	bytes = 0;
+	while (str[i])
+	{
+		wclen = ft_wcbytelen(str[i]);
+		if (wclen != -1)
+			bytes += wclen;
+		if (wclen == -1 && bytes < n)
+			return (-1);
+		if (bytes > n)
+		{
+			bytes -= ft_wcbytelen(str[i]);
+			break ;
+		}
 		i++;
-	if (str[i] == c)
-		return (i);
-	else
-		return (-1);
+	}
+	return (bytes);
 }

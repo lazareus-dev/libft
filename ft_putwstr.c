@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_locate_char.c                                 .::    .:/ .      .::   */
+/*   ft_putwstr.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/12/08 15:20:39 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/27 19:40:28 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/12/22 17:25:52 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/01/09 20:09:45 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_locate_char(const char *str, char c)
+int		ft_putwstr(wchar_t *str)
 {
-	size_t	i;
+	int bytes;
 
-	i = 0;
-	while (str[i] && str[i] != c)
-		i++;
-	if (str[i] == c)
-		return (i);
-	else
-		return (-1);
+	bytes = 0;
+	while (*str)
+		bytes += ft_putwchar(*str++);
+	return (bytes);
 }
