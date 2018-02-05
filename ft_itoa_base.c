@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:22:26 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/08 18:37:55 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/05 17:11:36 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,7 +19,7 @@ static long		ft_abs(int n)
 	return ((n < 0) ? (long)-n : (long)n);
 }
 
-static int		ft_nbr_len_base(int n, int base)
+static int		ft_nbrlen_base(int n, int base)
 {
 	int	len;
 
@@ -43,7 +43,7 @@ char			*ft_itoa_base(int n, int base)
 	if (!(hexa = ft_strdup("0123456789abcdef")))
 		return (NULL);
 	n = ft_abs(n);
-	len = ft_nbr_len_base(n, base);
+	len = ft_nbrlen_base(n, base);
 	if(!(out = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
 	i = 0;
