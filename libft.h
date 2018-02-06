@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/05 17:10:54 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/06 13:31:05 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -50,8 +50,8 @@ void				ft_memdel(void **ap);
 
 size_t				ft_strlen(char const *s1);
 size_t				ft_wcslen(const wchar_t *ws);
-int					ft_wsbytelen(const wchar_t *ws);
-int					ft_wcbytelen(wchar_t wchar);
+size_t					ft_wsbytelen(const wchar_t *ws);
+size_t					ft_wcbytelen(wchar_t wchar);
 char				*ft_strdup(char const *s1);
 char				*ft_strndup(const char *s, size_t n);
 int					ft_strcmp(char const *s1, char const *s2);

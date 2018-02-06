@@ -6,14 +6,14 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:22:29 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/17 19:11:04 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/06 13:24:05 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putllnbr(long long n)
+void	ft_putllnbr(intmax_t n)
 {
 	if (n == -9223372036854775807)
 	{
