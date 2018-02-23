@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_get_stdout.c                                  .::    .:/ .      .::   */
+/*   ft_putnbytewstr.c                                .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/01/06 21:02:25 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/01/06 21:02:41 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/01/02 16:14:56 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/01/09 20:05:40 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-char	*ft_get_stdout(int *pfd, int *save)
-{
-	char	*rslt;
-	char	*tmp;
-	char	buff[READ_SIZE + 1];
+#include "libft.h"
 
-	fflush(stdout);
-	rslt = ft_strnew(0);
-	close(pfd[1]);
-	close(1);
-	bzero(buff, READ_SIZE + 1);
-	while (read(pfd[0], buff, READ_SIZE) > 0)
+wchar_t		*ft_putnbytewstr(wchar_t *str, int n)
+{
+	wchar_t	*out;
+	int		bytes;
+	int		wclen;
+	int		i;
+
+	out = (wchar_t *)ft_memalloc(sizeof(wchar_t) * (n + 1));
+	i = 0;
+	bytes = 0;
+	while (str[i])
 	{
-		tmp = rslt;
-		rslt = ft_strjoin(tmp, buff);
-		free(tmp);
-		bzero(buff, READ_SIZE + 1);
+		if ((wclen = ft_wcbytelen(str[i])) >= 0)
+		{
+			bytes += wclen;
+			if (bytes <= n)
+				out[i] = str[i];
+			else
+				return (out);
+		}
+		else
+			return (out);
+		i++;
 	}
-	close(pfd[0]);
-	dup2(*save, 1);
-	close(*save);
-	return (rslt);
+	return (out);
 }

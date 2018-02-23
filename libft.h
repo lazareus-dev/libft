@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/06 13:31:05 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/14 14:09:11 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,6 +17,7 @@
 # include <string.h>
 # include <wchar.h>
 # include <stdlib.h>
+//# include "get_next_line.h"
 
 typedef struct		s_list
 {
@@ -85,6 +86,7 @@ char				*ft_realloc(char *s1, char *s2);
 char				*ft_super_realloc(char *s1, char *s2);
 char				*ft_append_char(char *s1, char c);
 void				ft_strcapitalize(char *s);
+char				*ft_strexpand(char **str, size_t size);
 
 void				**ft_matricealloc(size_t d1, size_t d2);
 int					ft_putchar(char c);
@@ -138,5 +140,7 @@ int					ft_putwstr(wchar_t *wc);
 int					ft_putnwstr(wchar_t *wc, int n);
 wchar_t				*ft_putnbytewstr(wchar_t *wc, int n);
 int					ft_nbprintable(wchar_t *wc, int n);
+
+int					get_next_line(int const fd, char **line);
 
 #endif
