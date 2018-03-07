@@ -6,10 +6,9 @@
 #    By: tle-coza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 11:09:59 by tle-coza          #+#    #+#              #
-#    Updated: 2018/02/14 14:06:41 by tle-coza    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/03/07 12:46:55 by tle-coza    ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
-
 NAME = libft.a
 
 FLAGS = -Wall -Wextra -Werror
@@ -41,7 +40,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rc $@ $^
+	ar crs $@ $^
 
 %.o: %.c
 	gcc -I $(FLAGS) -c $^ -o $@

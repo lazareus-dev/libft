@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/14 14:09:11 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/03/06 20:33:36 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,7 +17,7 @@
 # include <string.h>
 # include <wchar.h>
 # include <stdlib.h>
-//# include "get_next_line.h"
+# include "./ft_printf/ft_printf.h"
 
 typedef struct		s_list
 {
@@ -49,10 +49,13 @@ void				*ft_memalloc(size_t size);
 void				*ft_memrealloc(void *s1, void *s2, size_t size);
 void				ft_memdel(void **ap);
 
+/*
+** String functions
+*/
 size_t				ft_strlen(char const *s1);
 size_t				ft_wcslen(const wchar_t *ws);
-size_t					ft_wsbytelen(const wchar_t *ws);
-size_t					ft_wcbytelen(wchar_t wchar);
+size_t				ft_wsbytelen(const wchar_t *ws);
+size_t				ft_wcbytelen(wchar_t wchar);
 char				*ft_strdup(char const *s1);
 char				*ft_strndup(const char *s, size_t n);
 int					ft_strcmp(char const *s1, char const *s2);
@@ -142,5 +145,4 @@ wchar_t				*ft_putnbytewstr(wchar_t *wc, int n);
 int					ft_nbprintable(wchar_t *wc, int n);
 
 int					get_next_line(int const fd, char **line);
-
 #endif
