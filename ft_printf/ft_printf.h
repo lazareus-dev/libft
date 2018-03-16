@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/12/09 15:02:45 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/03/07 12:53:47 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/03/08 15:20:45 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -87,11 +87,11 @@ size_t			compute_wstr(void *val, t_spec *spec);
 
 int				print_int(intmax_t *val, t_spec *spec);
 int				print_uint(uintmax_t *val, t_spec *spec);
-/*
+
 int				ft_putwchar(wchar_t wc);
 int				ft_putwstr(wchar_t *wc);
 int				ft_putnwstr(wchar_t *wc, int n);
 wchar_t			*ft_putnbytewstr(wchar_t *wc, int n);
 int				ft_nbprintable(wchar_t *wc, int n);
-*/
+
 #endif

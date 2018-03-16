@@ -6,7 +6,7 @@
 #    By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2017/12/11 11:12:30 by tle-coza     #+#   ##    ##    #+#        #
-#    Updated: 2018/03/07 12:43:23 by tle-coza    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/03/08 15:29:46 by tle-coza    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -18,7 +18,7 @@ FLAGS = -Wall -Wextra -Werror
 HEADER = ft_printf.h ../libft.h
 
 SRC = ft_printf.c check_spec.c get_spec.c parse_args.c argsize.c print_str.c \
-	  print_nb.c compute_nb.c 
+	  print_nb.c compute_nb.c
 
 LIBFT	= ../libft.a
 LIB_INC	= -I ../libft.h

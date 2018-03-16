@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/03/06 20:33:36 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/03/08 15:20:54 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -137,12 +137,12 @@ void				print_hex(unsigned long long n);
 size_t				ft_nbr_len_base(uintmax_t nb, int base);
 int					printf_nbrlen_base(uintmax_t nbr, char *base);
 char				*ft_get_stdout(int *pfd, int *save);
-
+/*
 int					ft_putwchar(wchar_t wc);
 int					ft_putwstr(wchar_t *wc);
 int					ft_putnwstr(wchar_t *wc, int n);
 wchar_t				*ft_putnbytewstr(wchar_t *wc, int n);
 int					ft_nbprintable(wchar_t *wc, int n);
-
+*/
 int					get_next_line(int const fd, char **line);
 #endif

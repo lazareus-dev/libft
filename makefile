@@ -6,7 +6,7 @@
 #    By: tle-coza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 11:09:59 by tle-coza          #+#    #+#              #
-#    Updated: 2018/03/07 12:46:55 by tle-coza    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/03/08 15:36:44 by tle-coza    ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -33,7 +33,8 @@ SRCS = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	   ft_ltoa.c ft_super_realloc.c ft_strinit.c ft_putllnbr.c ft_nbr_len.c \
 	   ft_abs_ptr.c ft_putnchar.c ft_ltoa_base.c print_bits.c ft_wcslen.c \
 	   ft_wcbytelen.c ft_wsbytelen.c ft_abs_int.c get_next_line.c \
-	   ft_strexpand.c
+	   ft_strexpand.c ft_putwchar.c ft_putwstr.c ft_putnwstr.c \
+	   ft_putnbytewstr.c ft_nbprintable.c ft_putnbrbase.c printf_nbrlen_base.c
 
 OBJS = $(SRCS:.c=.o)
 
