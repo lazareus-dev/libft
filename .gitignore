@@ -1,4 +1,4 @@
 *.o
-*.swp
 *.a
+*.swp
 main.c

@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/12/14 18:10:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/14 18:11:13 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/03/20 10:41:12 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,7 +18,7 @@ char	*ft_strinit(size_t size, char c)
 	char	*str;
 	size_t	i;
 
-	str = (char *)malloc(sizeof(char) * (size + 1));
+	str = ft_strnew(size);
 	if (!str)
 		return (NULL);
 	i = 0;

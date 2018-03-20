@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:22:26 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/06 13:27:32 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/03/20 14:54:49 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -42,7 +42,7 @@ char			*ft_ltoa_base(long long n, int base)
 		return (NULL);
 	n = ft_abs(n);
 	len = ft_nbrlen_base(n, base);
-	if(!(out = (char *)malloc(sizeof(char) * len + 1)))
+	if (!(out = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
 	i = 0;
 	while (i++ < len)

@@ -6,7 +6,7 @@
 /*   By: bodibon <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/30 18:10:24 by bodibon      #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/14 14:08:43 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/03/20 14:56:47 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,4 +35,4 @@ int				get_next_line(const int fd, char **line);
 static t_getch	*set_getch(const int fd);
 static t_list	*tog_lst(t_list **lst, const int fd);
 
-# endif
+#endif

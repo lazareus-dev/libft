@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:22:31 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/03/05 21:41:34 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/03/20 14:56:25 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,7 @@ int		ft_strcmp(const char *s1, const char *s2)
 	int i;
 
 	if (!s1 || !s2)
-		return 0;
+		return (0);
 	i = 0;
 	while (s1[i] && s2[i] && (s1[i] == s2[i]))
 		i++;
