@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:22:31 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/11/24 18:22:31 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/02 19:51:59 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,6 +19,8 @@ char	*ft_strdup(const char *s)
 	int		i;
 	char	*ret;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	while (s[i])
 		i++;
