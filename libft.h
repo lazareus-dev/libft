@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/10 13:22:49 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/18 11:07:12 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -97,11 +97,12 @@ int					ft_putchar(char c);
 int					ft_putnchar(char c, int n);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
-void				ft_putnbr(int n);
-void				ft_putllnbr(intmax_t n);
+void				ft_putstr_tab(char const **tab);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
+void				ft_putnbr(int n);
+void				ft_putllnbr(intmax_t n);
 void				ft_putnbr_fd(int n, int fd);
 void				print_bits(unsigned char octet);
 t_list				*ft_lstnew(void const *content, size_t content_size);
@@ -138,12 +139,5 @@ void				print_hex(unsigned long long n);
 size_t				ft_nbr_len_base(uintmax_t nb, int base);
 int					printf_nbrlen_base(uintmax_t nbr, char *base);
 char				*ft_get_stdout(int *pfd, int *save);
-/*
-int					ft_putwchar(wchar_t wc);
-int					ft_putwstr(wchar_t *wc);
-int					ft_putnwstr(wchar_t *wc, int n);
-wchar_t				*ft_putnbytewstr(wchar_t *wc, int n);
-int					ft_nbprintable(wchar_t *wc, int n);
-*/
 int					get_next_line(int const fd, char **line);
 #endif
