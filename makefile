@@ -6,13 +6,13 @@
 #    By: tle-coza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 11:09:59 by tle-coza          #+#    #+#              #
-#    Updated: 2018/04/24 10:19:11 by tle-coza    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/04/27 17:43:48 by tle-coza    ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libft.a
 
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror -O2
 
 SRCS	= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		  ft_isblank.c ft_iscntrl.c ft_isdigit.c ft_isgraph.c ft_islower.c \
