@@ -6,7 +6,7 @@
 #    By: tle-coza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 11:09:59 by tle-coza          #+#    #+#              #
-#    Updated: 2018/04/27 17:43:48 by tle-coza    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/05/04 23:37:33 by tle-coza    ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ SRCS	= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		  get_next_line.c ft_strexpand.c ft_putwchar.c ft_putwstr.c \
 		  ft_putnwstr.c ft_putnbytewstr.c ft_nbprintable.c ft_putnbrbase.c \
 		  ft_putnbr_fd.c printf_nbrlen_base.c ft_matricedel.c \
-		  ft_putstr_tab.c
+		  ft_putstr_tab.c ft_getenv.c ft_strtrim_tab.c
 
 PFSRC	= ft_printf.c check_spec.c get_spec.c parse_args.c argsize.c \
 		  print_str.c print_nb.c compute_nb.c
@@ -53,7 +53,7 @@ INC = -I libft.h -I ./ft_printf/ft_printf.h
 all: $(NAME)
 
 $(NAME): $(OBJS) $(PFOBJS)
-	@ar crs $@ $^
+	ar crs $@ $^
 
 %.o: %.c
 	@gcc -O2 $(INC) $(FLAGS) -c $^ -o $@

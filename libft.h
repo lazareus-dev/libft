@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/18 11:07:12 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/05/04 23:40:17 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -82,6 +82,7 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strtrim(char const *s);
+void				ft_strtrim_tab(char ***s);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				**ft_strsplit(char const *s, char c);
@@ -92,12 +93,12 @@ void				ft_strcapitalize(char *s);
 char				*ft_strexpand(char **str, size_t size);
 
 void				**ft_matricealloc(size_t d1, size_t d2);
-void				ft_matricedel(char ***matrice);
+void				ft_matricedel(char ***p_to_matrice);
 int					ft_putchar(char c);
 int					ft_putnchar(char c, int n);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
-void				ft_putstr_tab(char const **tab);
+void				ft_putstr_tab(char **tab);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
@@ -140,4 +141,6 @@ size_t				ft_nbr_len_base(uintmax_t nb, int base);
 int					printf_nbrlen_base(uintmax_t nbr, char *base);
 char				*ft_get_stdout(int *pfd, int *save);
 int					get_next_line(int const fd, char **line);
+
+char				*ft_getenv(const char *name);
 #endif
