@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_matricedel.c                                  .::    .:/ .      .::   */
+/*   ft_triplejoin_free.c                             .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/04/10 13:15:54 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/05/07 17:19:03 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/06/07 18:59:46 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/06/07 19:02:58 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	ft_matricedel(char ***pointer)
+char	*ft_triplejoin_free(char *s1, char *s2, char *s3)
 {
-	int		i;
-	char	**matrice;
+	char	*out;
 
-	i = 0;
-	matrice = *pointer;
-	if (pointer && matrice)
-	{
-		while (matrice[i] != NULL)
-		{
-			free(matrice[i]);
-			i++;
-		}
-		free(matrice);
-		pointer = NULL;
-	}
+	out = ft_strjoin(s1, s2);
+	out = ft_realloc(out, s3);
+	ft_strdel(&s1);
+	ft_strdel(&s3);
+	return (out);
 }

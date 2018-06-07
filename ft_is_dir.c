@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_matricedel.c                                  .::    .:/ .      .::   */
+/*   ft_is_dir.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/04/10 13:15:54 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/05/07 17:19:03 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/06/02 11:39:21 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/06/02 11:40:15 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include <sys/stat.h>
 
-void	ft_matricedel(char ***pointer)
+int	ft_is_dir(char *path)
 {
-	int		i;
-	char	**matrice;
+	struct stat filestat;
 
-	i = 0;
-	matrice = *pointer;
-	if (pointer && matrice)
-	{
-		while (matrice[i] != NULL)
-		{
-			free(matrice[i]);
-			i++;
-		}
-		free(matrice);
-		pointer = NULL;
-	}
+	if (stat(path, &(filestat)) == -1)
+		return (0);
+	return ((filestat.st_mode & S_IFMT) == S_IFDIR);
 }

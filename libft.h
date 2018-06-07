@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/05/04 23:40:17 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/06/07 19:01:19 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -85,7 +85,10 @@ char				*ft_strtrim(char const *s);
 void				ft_strtrim_tab(char ***s);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_triplejoin(char *s1, char *s2, char *s3);
+char				*ft_triplejoin_free(char *s1, char *s2, char *s3);
 char				**ft_strsplit(char const *s, char c);
+char				**ft_splitwhitespace(char const *s);
 char				*ft_realloc(char *s1, char *s2);
 char				*ft_super_realloc(char *s1, char *s2);
 char				*ft_append_char(char *s1, char c);
@@ -142,5 +145,7 @@ int					printf_nbrlen_base(uintmax_t nbr, char *base);
 char				*ft_get_stdout(int *pfd, int *save);
 int					get_next_line(int const fd, char **line);
 
-char				*ft_getenv(const char *name);
+char				*ft_getenv(const char *name, char **environ);
+
+int					ft_is_dir(char *path);
 #endif

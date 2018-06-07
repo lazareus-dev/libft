@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/05/04 11:44:40 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/05/04 18:07:20 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/05/31 18:12:30 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -42,9 +42,8 @@ char	*findenv(const char *name, char **environ, int *len)
 	return (NULL);
 }
 
-char	*ft_getenv(const char *name)
+char	*ft_getenv(const char *name, char **environ)
 {
-	extern char	**environ;
 	int			len;
 
 	if (!name || !environ)
