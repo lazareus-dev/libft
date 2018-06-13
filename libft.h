@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/08 14:28:02 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/06/12 19:00:34 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -88,6 +88,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_triplejoin(char *s1, char *s2, char *s3);
 char				*ft_triplejoin_free(char *s1, char *s2, char *s3);
 char				**ft_strsplit(char const *s, char c);
+t_list				*ft_strsplittolst(char const *s, int (*ft)(int c));
 char				**ft_splitwhitespace(char const *s);
 char				*ft_realloc(char *s1, char *s2);
 char				*ft_super_realloc(char *s1, char *s2);
@@ -113,12 +114,12 @@ void				print_bits(unsigned char octet);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstfree(t_list **alst);
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_lstpushback(t_list **lst, t_list *node);
+void				ft_lstrdel(void *content, size_t content_size);
 
 int					ft_isblank(int c);
 int					ft_isspace(int c);

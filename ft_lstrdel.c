@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_super_realloc.c                               .::    .:/ .      .::   */
+/*   ft_lstrdel.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/12/12 19:49:31 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/12 19:38:39 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/06/12 18:57:52 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/06/12 19:00:01 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_super_realloc(char *s1, char *s2)
+void	ft_lstrdel(void *content, size_t content_size)
 {
-	char	*tab_out;
-	size_t	len;
+	char	*str;
 
-	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	tab_out = ft_strnew(len);
-	if (!tab_out)
-		return (NULL);
-	if (s1)
-	{
-		ft_strcpy(tab_out, s1);
-		ft_strcat(tab_out, s2);
-	}
-	free(s1);
-	free(s2);
-	return (tab_out);
+	str = (char *)content;
+	ft_strdel(&str);
+	content_size = 0;
 }

@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_super_realloc.c                               .::    .:/ .      .::   */
+/*   ft_lstpushback.c                                 .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/12/12 19:49:31 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/12 19:38:39 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/06/12 17:50:39 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/06/12 18:01:42 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_super_realloc(char *s1, char *s2)
+void	ft_lstpushback(t_list **lst, t_list *node)
 {
-	char	*tab_out;
-	size_t	len;
+	t_list *run;
 
-	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	tab_out = ft_strnew(len);
-	if (!tab_out)
-		return (NULL);
-	if (s1)
+	if (!(*lst))
+		*lst = node;
+	else
 	{
-		ft_strcpy(tab_out, s1);
-		ft_strcat(tab_out, s2);
+		run = *lst;
+		while (run->next)
+			run = run->next;
+		run->next = node;
 	}
-	free(s1);
-	free(s2);
-	return (tab_out);
 }

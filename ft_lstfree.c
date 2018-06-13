@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_super_realloc.c                               .::    .:/ .      .::   */
+/*   ft_lstfree.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/12/12 19:49:31 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/12 19:38:39 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/06/12 18:41:05 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/06/12 18:43:54 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -14,21 +14,17 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_super_realloc(char *s1, char *s2)
+void	ft_lstfree(t_list **alst)
 {
-	char	*tab_out;
-	size_t	len;
+	t_list	*hook;
 
-	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	tab_out = ft_strnew(len);
-	if (!tab_out)
-		return (NULL);
-	if (s1)
+	while (*alst)
 	{
-		ft_strcpy(tab_out, s1);
-		ft_strcat(tab_out, s2);
+		hook = (*alst)->next;
+		if ((*alst)->content)
+			free((*alst)->content);
+		free(*alst);
+		*alst = hook;
 	}
-	free(s1);
-	free(s2);
-	return (tab_out);
+	*alst = NULL;
 }

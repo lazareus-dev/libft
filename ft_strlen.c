@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:22:32 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/11/24 18:22:32 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/06/12 19:26:10 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *s)
 {
 	size_t len;
 
+	if (!s)
+		return (0);
 	len = 0;
 	while (s[len])
 		len++;
