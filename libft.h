@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/12 19:00:34 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/06/15 13:36:46 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -152,6 +152,8 @@ char				*ft_getenv(const char *name, char **environ);
 int					ft_is_dir(char *path);
 int					ft_is_exec(char *path);
 int					ft_is_binary(char *path);
+
+char				*get_envpath_from_file(void);
 
 int					get_shell_line(char **line);
 #endif
