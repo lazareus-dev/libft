@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/15 13:36:46 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/06/18 14:59:38 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -96,6 +96,7 @@ char				*ft_append_char(char *s1, char c);
 void				ft_strcapitalize(char *s);
 char				*ft_strexpand(char **str, size_t size);
 void				*ft_myrealloc(void *ptr, size_t prev_size, size_t new_size);
+size_t				ft_strcspn(const char *s1, const char *s2);
 
 void				**ft_matricealloc(size_t d1, size_t d2);
 void				ft_matricedel(char ***p_to_matrice);
@@ -155,5 +156,11 @@ int					ft_is_binary(char *path);
 
 char				*get_envpath_from_file(void);
 
+/*
+** Input functions
+*/
+
+int					ft_getc(int fd);
+int					ft_getchar(void);
 int					get_shell_line(char **line);
 #endif

@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/06/08 14:19:15 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/08 14:32:15 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/06/18 14:10:58 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,23 +16,24 @@
 int	get_shell_line(char **input)
 {
 	int		retread;
-	char	buf;
-	int		i;
 	int		count;
+	char	c;
+	int		i;
 
 	*input = ft_strnew(1);
 	count = 1;
 	i = 0;
-	while ((retread = read(0, &buf, 1)) && buf != '\n')
+	while ((retread = read(0, &c, 1)) && c != '\n')
 	{
-		*(*input + i++) = buf;
+		*(*input + i) = c;
 		*input = ft_myrealloc(*input, count, count + 1);
 		count++;
+		i++;
 	}
 	*(*input + i) = '\0';
-	if (!retread)
+	if (!c)
 	{
-		free(*input);
+		ft_strdel(input);
 		return (0);
 	}
 	return (1);
