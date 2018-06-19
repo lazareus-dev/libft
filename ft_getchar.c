@@ -6,14 +6,14 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/06/18 13:21:16 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/18 13:32:23 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/06/19 11:47:58 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_getchar(void)
+int	ft_getchar(void)
 {
 	return (ft_getc(0));
 }
