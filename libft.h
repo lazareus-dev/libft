@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/18 14:59:38 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/06/25 17:01:19 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,6 +25,11 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_headlst
+{
+	void			*first;
+}					t_headlst;
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -108,6 +113,7 @@ void				ft_putstr_tab(char **tab);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
+int					ft_putchar_term(int c);
 void				ft_putnbr(int n);
 void				ft_putllnbr(intmax_t n);
 void				ft_putnbr_fd(int n, int fd);

@@ -6,7 +6,7 @@
 #    By: tle-coza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 11:09:59 by tle-coza          #+#    #+#              #
-#    Updated: 2018/06/18 14:59:01 by tle-coza    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/06/25 17:00:55 by tle-coza    ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ SRCS	= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		  ft_triplejoin.c ft_is_dir.c ft_triplejoin_free.c ft_myrealloc.c \
 		  get_shell_line.c ft_is_binary.c ft_is_exec.c ft_strsplittolst.c \
 		  ft_lstpushback.c ft_lstfree.c ft_lstrdel.c get_envpath_from_file.c \
-		  ft_getchar.c ft_getc.c ft_strcspn.c
+		  ft_getchar.c ft_getc.c ft_strcspn.c ft_putchar_term.c
 
 PFSRC	= ft_printf.c check_spec.c get_spec.c parse_args.c argsize.c \
 		  print_str.c print_nb.c compute_nb.c
