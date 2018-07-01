@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/25 17:01:19 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/01 15:09:35 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,6 +29,7 @@ typedef struct		s_list
 typedef struct		s_headlst
 {
 	void			*first;
+	int				nb_node;
 }					t_headlst;
 
 void				*ft_memset(void *b, int c, size_t len);
@@ -144,6 +145,11 @@ int					ft_str_is_alpha(char *s);
 int					ft_str_is_numeric(char *s);
 int					ft_str_is_printable(char *s);
 
+/*
+** Math functions
+*/
+
+int					ft_floorsqrt(int x);
 long				ft_abs_ptr(void *ptr);
 int					ft_abs_int(int nbr);
 
@@ -154,13 +160,17 @@ int					printf_nbrlen_base(uintmax_t nbr, char *base);
 char				*ft_get_stdout(int *pfd, int *save);
 int					get_next_line(int const fd, char **line);
 
-char				*ft_getenv(const char *name, char **environ);
-
 int					ft_is_dir(char *path);
 int					ft_is_exec(char *path);
 int					ft_is_binary(char *path);
+int					ft_is_lnk(char *path);
+
+/*
+** Shell functions
+*/
 
 char				*get_envpath_from_file(void);
+char				*ft_getenv(const char *name, char **environ);
 
 /*
 ** Input functions

@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_putchar.c                                     .::    .:/ .      .::   */
+/*   ft_is_lnk.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/24 18:22:28 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/30 20:08:56 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/07/01 15:04:34 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/07/01 15:09:07 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <sys/stat.h>
 
-int	ft_putchar_term(int c)
+int	ft_is_lnk(char *path)
 {
-	write(2, &c, 1);
-	return (1);
+	struct stat filestat;
+
+	if (lstat(path, &(filestat)) == -1)
+		return (0);
+	return ((filestat.st_mode & S_IFMT) == S_IFLNK);
 }
