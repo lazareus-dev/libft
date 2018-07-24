@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/07/16 11:32:53 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/24 17:12:03 by vbranco     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -93,6 +93,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_triplejoin(char *s1, char *s2, char *s3);
 char				*ft_triplejoin_free(char *s1, char *s2, char *s3);
+char				*ft_str_joinordup(char *s1, char *s2);
 char				**ft_strsplit(char const *s, char c);
 t_list				*ft_strsplittolst(char const *s, int (*ft)(int c));
 char				**ft_splitwhitespace(char const *s);

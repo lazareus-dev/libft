@@ -6,7 +6,7 @@
 #    By: tle-coza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 11:09:59 by tle-coza          #+#    #+#              #
-#    Updated: 2018/07/16 11:27:31 by tle-coza    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/07/24 17:12:28 by vbranco     ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ SRCS	= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		  get_shell_line.c ft_is_binary.c ft_is_exec.c ft_strsplittolst.c \
 		  ft_lstpushback.c ft_lstfree.c ft_lstrdel.c get_envpath_from_file.c \
 		  ft_getchar.c ft_getc.c ft_strcspn.c ft_putchar_term.c ft_floorsqrt.c \
-		  ft_is_lnk.c ft_abs.c
+		  ft_is_lnk.c ft_abs.c ft_str_joinordup.c
 
 
 PFSRC	= ft_printf.c check_spec.c get_spec.c parse_args.c argsize.c \
