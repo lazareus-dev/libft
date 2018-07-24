@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/07/24 17:12:03 by vbranco     ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/24 20:00:36 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,6 +29,7 @@ typedef struct		s_list
 typedef struct		s_headlst
 {
 	void			*first;
+	void			*last;
 	int				nb_node;
 }					t_headlst;
 
