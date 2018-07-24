@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/07/01 15:09:35 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/16 11:32:53 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -152,6 +152,7 @@ int					ft_str_is_printable(char *s);
 int					ft_floorsqrt(int x);
 long				ft_abs_ptr(void *ptr);
 int					ft_abs_int(int nbr);
+intmax_t			ft_abs(intmax_t nbr);
 
 void				ft_putnbrbase(uintmax_t nbr, char *base);
 void				print_hex(unsigned long long n);

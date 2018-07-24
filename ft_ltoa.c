@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/12/12 12:39:49 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/17 19:21:02 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/16 11:30:44 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static long		ft_abs(long n)
+static long		ltoa_abs(long n)
 {
 	return ((n < 0) ? -n : n);
 }
@@ -43,7 +43,7 @@ char			*ft_ltoa(long n)
 	if (!out)
 		return (NULL);
 	i = 0;
-	val = ft_abs(n);
+	val = ltoa_abs(n);
 	while (i++ < len)
 	{
 		out[len - i] = ((val % 10) + '0');
