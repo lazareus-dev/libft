@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/07/24 20:00:36 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/25 14:40:28 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -130,6 +130,7 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstpushback(t_list **lst, t_list *node);
 void				ft_lstrdel(void *content, size_t content_size);
+t_headlst			*ft_init_headlst(void);
 
 int					ft_isblank(int c);
 int					ft_isspace(int c);
