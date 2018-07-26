@@ -6,7 +6,7 @@
 #    By: tle-coza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 11:09:59 by tle-coza          #+#    #+#              #
-#    Updated: 2018/07/26 16:15:01 by tle-coza    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/07/26 19:17:30 by tle-coza    ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ SRCS	= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		  ft_lstpushback.c ft_lstfree.c ft_lstrdel.c get_envpath_from_file.c \
 		  ft_getchar.c ft_getc.c ft_strcspn.c ft_putchar_term.c ft_floorsqrt.c \
 		  ft_is_lnk.c ft_abs.c ft_str_joinordup.c ft_init_headlst.c \
-		  ft_jenkins_hash.c
+		  ft_jenkins_hash.c ft_hash_add.c ft_hash_find.c ft_create_hash_table.c
 
 
 PFSRC	= ft_printf.c check_spec.c get_spec.c parse_args.c argsize.c \

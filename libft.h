@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/07/25 14:40:28 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/26 18:57:49 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -127,6 +127,11 @@ void				ft_putnbr(int n);
 void				ft_putllnbr(intmax_t n);
 void				ft_putnbr_fd(int n, int fd);
 void				print_bits(unsigned char octet);
+
+/*
+** List functions
+*/
+
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -186,7 +191,10 @@ char				*ft_getenv(const char *name, char **environ);
 ** Hash functions
 */
 
-int					ft_jenkins_hash(char *key, size_t len);
+t_hash_table		*ft_create_hash_table(int size);
+unsigned int		ft_jenkins_hash(char *key, size_t len);
+t_list				*ft_hash_find(t_hash_table *hashtable, char *str);
+int					ft_hash_add(t_hash_table *hashtable, char *str);
 
 /*
 ** Input functions

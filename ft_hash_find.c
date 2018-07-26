@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_putchar.c                                     .::    .:/ .      .::   */
+/*   ft_hash_find.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/24 18:22:28 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/30 20:08:56 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/07/26 18:19:16 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/07/26 19:01:11 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int	ft_putchar_term(int c)
+t_list	*ft_hash_find(t_hash_table *hashtable, char *str)
 {
-	write(0, &c, 1);
-	return (1);
+	t_list			*list;
+	unsigned int	hashval;
+
+	hashval = ft_jenkins_hash(str, ft_strlen(str));
+	hashval %= hashtable->size;
+	list = hashtable->table[hashval];
+	while (list)
+	{
+		if (ft_strcmp(str, (char *)list->content))
+			return (list);
+		list = list->next;
+	}
+	return (NULL);
 }
