@@ -33,6 +33,12 @@ typedef struct		s_headlst
 	int				nb_node;
 }					t_headlst;
 
+typedef struct	s_hash_table
+{
+	int			size;
+	t_list		**table;
+}				t_hash_table;
+
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, void const *src, size_t n);
@@ -175,6 +181,12 @@ int					ft_is_lnk(char *path);
 
 char				*get_envpath_from_file(void);
 char				*ft_getenv(const char *name, char **environ);
+
+/*
+** Hash functions
+*/
+
+int					ft_jenkins_hash(char *key, size_t len);
 
 /*
 ** Input functions
