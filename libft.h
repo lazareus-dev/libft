@@ -195,6 +195,7 @@ t_hash_table		*ft_create_hash_table(int size);
 unsigned int		ft_jenkins_hash(char *key, size_t len);
 t_list				*ft_hash_find(t_hash_table *hashtable, char *str);
 int					ft_hash_add(t_hash_table *hashtable, char *str);
+void				ft_free_hashtable(t_hash_table *hashtable);
 
 /*
 ** Input functions
