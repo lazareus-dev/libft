@@ -199,7 +199,7 @@ t_list				*ft_hash_findkv(t_hash_table *hashtable, char *key,
 		char *val);
 int					ft_hash_addkv(t_hash_table *hashtable, char *key,
 		char *val);
-void				ft_free_hashtable(t_hash_table *hashtable);
+void				ft_free_hashtable(t_hash_table **hashtable);
 
 /*
 ** Input functions

@@ -21,10 +21,10 @@ int	ft_hash_add(t_hash_table *hashtable, char *str)
 
 	hashval = ft_jenkins_hash(str, ft_strlen(str));
 	hashval %= hashtable->size;
-	if (!(new_list = ft_lstnew(NULL, 0)))
-		return (1);
 	current_list = ft_hash_find(hashtable, str);
 	if (current_list != NULL)
+		return (1);
+	if (!(new_list = ft_lstnew(NULL, 0)))
 		return (1);
 	new_list->content = ft_strdup(str);
 	new_list->next = hashtable->table[hashval];

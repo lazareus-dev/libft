@@ -13,18 +13,18 @@
 
 #include "libft.h"
 
-void	ft_free_hashtable(t_hash_table *hashtable)
+void	ft_free_hashtable(t_hash_table **hashtable)
 {
 	t_list	*list;
 	t_list	*del;
 	int		i;
 
-	if (!hashtable)
+	if (!hashtable || !*hashtable)
 		return ;
 	i = 0;
-	while (i < hashtable->size)
+	while (i < (*hashtable)->size)
 	{
-		list = hashtable->table[i];
+		list = (*hashtable)->table[i];
 		while (list)
 		{
 			del = list;
@@ -34,6 +34,6 @@ void	ft_free_hashtable(t_hash_table *hashtable)
 		}
 		i++;
 	}
-	free(hashtable->table);
-	free(hashtable);
+	free((*hashtable)->table);
+	free(*hashtable);
 }

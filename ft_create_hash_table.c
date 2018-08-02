@@ -25,7 +25,7 @@ t_hash_table	*ft_create_hash_table(int size)
 	if ((new_table->table = (t_list **)malloc(sizeof(t_list *) * size)) == NULL)
 		return (NULL);
 	i = 0;
-	while (i < 0)
+	while (i < size)
 		new_table->table[i++] = NULL;
 	new_table->size = size;
 	return (new_table);
