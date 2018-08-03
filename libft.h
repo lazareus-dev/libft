@@ -199,6 +199,7 @@ t_list				*ft_hash_findkv(t_hash_table *hashtable, char *key,
 		char *val);
 int					ft_hash_addkv(t_hash_table *hashtable, char *key,
 		char *val);
+t_list				*ft_hash_getbin(t_hash_table *hashtable, char *str);
 void				ft_free_hashtable(t_hash_table **hashtable);
 
 /*
