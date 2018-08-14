@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/07/28 18:57:37 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/08/14 17:54:57 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -186,6 +186,9 @@ int					ft_is_lnk(char *path);
 
 char				*get_envpath_from_file(void);
 char				*ft_getenv(const char *name, char **environ);
+int					ft_hash_addbin(t_hash_table *hashtable, char *key,
+		char *val);
+t_list				*ft_hash_getbin(t_hash_table *hashtable, char *str);
 
 /*
 ** Hash functions
@@ -199,7 +202,6 @@ t_list				*ft_hash_findkv(t_hash_table *hashtable, char *key,
 		char *val);
 int					ft_hash_addkv(t_hash_table *hashtable, char *key,
 		char *val);
-t_list				*ft_hash_getbin(t_hash_table *hashtable, char *str);
 void				ft_free_hashtable(t_hash_table **hashtable);
 
 /*

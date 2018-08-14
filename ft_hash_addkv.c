@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/07/28 18:55:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/07/28 19:41:56 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/08/14 17:42:55 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,6 +23,7 @@ int	ft_hash_addkv(t_hash_table *hashtable, char *key, char *value)
 	hashkey /= 2;
 	hashkey %= hashtable->size;
 	current_list = ft_hash_findkv(hashtable, key, value);
+	dprintf(1, "\nHASH : %d\nkey = %s <---> value = %s", hashkey, key, value);
 	if (current_list != NULL)
 		return (1);
 	if (!(new_list = (t_list *)malloc(sizeof(t_list))))
@@ -30,5 +31,6 @@ int	ft_hash_addkv(t_hash_table *hashtable, char *key, char *value)
 	new_list->content = ft_strdup(value);
 	new_list->next = hashtable->table[hashkey];
 	hashtable->table[hashkey] = new_list;
+	dprintf(1, " ADDED");
 	return (0);
 }
