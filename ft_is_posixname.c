@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_hash_getbin.c                                 .::    .:/ .      .::   */
+/*   ft_is_posixname.c                                .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/07/26 18:19:16 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/08/31 11:41:06 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/08/30 13:57:56 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/08/30 14:06:46 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_hash_getbin(t_hash_table *hashtable, char *str)
+int		ft_is_posixname(char *name)
 {
-	t_list			*list;
-	char			*end;
-	unsigned int	hashval;
+	size_t i;
 
-	hashval = ft_jenkins_hash(str, ft_strlen(str));
-	hashval /= 2;
-	hashval %= hashtable->size;
-	list = hashtable->table[hashval];
-	while (list)
+	i = 0;
+	if (ft_isdigit(name[0]))
+		return (0);
+	while (name[i])
 	{
-		end = ft_strrchr((char *)list->content, '/');
-		if (!ft_strcmp(str, end + 1))
-			return (list);
-		list = list->next;
+		if (!ft_is_posixname_char(name[i]))
+			return (0);
+		++i;
 	}
-	return (NULL);
+	return (1);
 }

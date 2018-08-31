@@ -5,88 +5,72 @@
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/04/24 10:16:24 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/24 10:16:28 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/11/24 11:51:49 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/06 12:21:36 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static int		getch(t_list *cur)
+void	reinit(t_buffer *cur)
 {
-	if (((t_getch*)(cur->content))->n == 0)
-	{
-		((t_getch*)cur->content)->bufp = ((t_getch*)cur->content)->buf;
-		((t_getch*)cur->content)->n = read(((t_getch*)cur->content)->fd,
-			((t_getch*)cur->content)->buf, BUFF_SIZE);
-		if (((t_getch*)cur->content)->n == -1)
-			return (-2);
-	}
-	return ((--((t_getch*)cur->content)->n >= 0) ?
-			(unsigned char)*((t_getch*)cur->content)->bufp++ : EOF);
+	if (cur->ptr)
+		ft_strdel(&(cur->ptr));
+	cur->buf = NULL;
+	cur->ptr = NULL;
+	cur->fd = 1;
+	cur = NULL;
 }
 
-static t_getch	*set_getch(const int fd)
+int		get_line(t_buffer *cur, char **line)
 {
-	t_getch	*getch;
-
-	if (!(getch = (t_getch*)malloc(sizeof(*getch))))
-		return (NULL);
-	getch->fd = fd;
-	getch->n = 0;
-	getch->bufp = getch->buf;
-	return (getch);
-}
-
-static t_list	*tog_lst(t_list **lst, const int fd)
-{
-	t_list	*cur;
-	t_getch *track;
-
-	cur = *lst;
-	if (*lst == NULL)
+	if (ft_strlen(cur->buf))
 	{
-		track = set_getch(fd);
-		*lst = ft_lstnew(track, sizeof(t_getch));
-		free(track);
-		return (*lst);
-	}
-	while (cur)
-	{
-		if (((t_getch*)(cur->content))->fd == fd)
-			return (cur);
-		cur = cur->next;
-	}
-	track = set_getch(fd);
-	ft_lstadd(lst, ft_lstnew(track, sizeof(t_getch)));
-	free(track);
-	return (*lst);
-}
-
-int				get_next_line(const int fd, char **line)
-{
-	char			*s;
-	char			c;
-	static t_list	*lst = NULL;
-	t_list			*cur;
-	size_t			i;
-
-	if (fd < 0 || BUFF_SIZE < 1 || line == NULL || read(fd, NULL, 0) < 0)
-		return (-1);
-	if (((s = ft_strnew(BUFF_SIZE)) == NULL))
-		return (-1);
-	cur = tog_lst(&lst, fd);
-	i = 0;
-	while ((c = getch(cur)) != '\n' && c != EOF)
-	{
-		if (c == -2)
+		if (!(*line = ft_strndup(cur->buf, cur->start)))
 			return (-1);
-		if (i % BUFF_SIZE == 0 && (s = ft_strexpand(&s, BUFF_SIZE)) == NULL)
-			return (-1);
-		s[i++] = c;
+		cur->buf += cur->start + 1;
+		return (1);
 	}
-	s[i] = '\0';
-	*line = s;
-	return ((i > 0 || (i == 0 && c == '\n')) ? 1 : 0);
+	reinit(cur);
+	return (0);
+}
+
+int		check_input(int const fd, char **line)
+{
+	char	buf[0];
+
+	if (fd < 0 || line == NULL)
+		return (-1);
+	if (read(fd, buf, 0) == -1)
+		return (-1);
+	return (0);
+}
+
+int		get_next_line(int const fd, char **line)
+{
+	static t_buffer	cur;
+	char			buf[BUFF_SIZE + 1];
+	int				retread;
+
+	if ((check_input(fd, line) == -1))
+		return (-1);
+	if (cur.fd != fd)
+		reinit(&cur);
+	if (cur.buf == NULL)
+	{
+		cur.fd = fd;
+		if (!(cur.ptr = ft_strnew(BUFF_SIZE)))
+			return (-1);
+		while ((retread = read(fd, buf, BUFF_SIZE)))
+		{
+			buf[retread] = '\0';
+			cur.ptr = ft_realloc(cur.ptr, buf);
+		}
+		cur.buf = cur.ptr;
+	}
+	cur.start = 0;
+	while (cur.buf[cur.start] != '\n' && cur.buf[cur.start])
+		cur.start++;
+	return (get_line(&cur, line));
 }

@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/08/14 17:54:57 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/08/31 11:42:14 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -33,11 +33,11 @@ typedef struct		s_headlst
 	int				nb_node;
 }					t_headlst;
 
-typedef struct	s_hash_table
+typedef struct		s_hash_table
 {
-	int			size;
-	t_list		**table;
-}				t_hash_table;
+	int				size;
+	t_list			**table;
+}					t_hash_table;
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -56,11 +56,14 @@ int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
+int					ft_is_posixname(char *str);
+int					ft_is_posixname_char(char c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 void				*ft_memalloc(size_t size);
 void				*ft_memrealloc(void *s1, void *s2, size_t size);
 void				ft_memdel(void **ap);
+char				**ft_strtab_alloc(size_t size);
 
 /*
 ** String functions
@@ -122,6 +125,7 @@ void				ft_putstr_tab(char **tab);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
+void				ft_putstr_reveal_blanks(char const *s);
 int					ft_putchar_term(int c);
 void				ft_putnbr(int n);
 void				ft_putllnbr(intmax_t n);
@@ -198,7 +202,7 @@ t_hash_table		*ft_create_hash_table(int size);
 unsigned int		ft_jenkins_hash(char *key, size_t len);
 t_list				*ft_hash_find(t_hash_table *hashtable, char *str);
 int					ft_hash_add(t_hash_table *hashtable, char *str);
-t_list				*ft_hash_findkv(t_hash_table *hashtable, char *key, 
+t_list				*ft_hash_findkv(t_hash_table *hashtable, char *key,
 		char *val);
 int					ft_hash_addkv(t_hash_table *hashtable, char *key,
 		char *val);
@@ -210,5 +214,5 @@ void				ft_free_hashtable(t_hash_table **hashtable);
 
 int					ft_getc(int fd);
 int					ft_getchar(void);
-int					get_shell_line(char **line);
+int					get_shell_line(int fd, char **line);
 #endif

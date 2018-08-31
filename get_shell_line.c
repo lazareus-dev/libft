@@ -6,14 +6,14 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/06/08 14:19:15 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/18 14:10:58 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/08/28 13:20:28 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_shell_line(char **input)
+int	get_shell_line(int fd, char **input)
 {
 	int		retread;
 	int		count;
@@ -23,7 +23,7 @@ int	get_shell_line(char **input)
 	*input = ft_strnew(1);
 	count = 1;
 	i = 0;
-	while ((retread = read(0, &c, 1)) && c != '\n')
+	while ((retread = read(fd, &c, 1)) && c != '\n')
 	{
 		*(*input + i) = c;
 		*input = ft_myrealloc(*input, count, count + 1);

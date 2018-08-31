@@ -19,6 +19,10 @@ char	*ft_super_realloc(char *s1, char *s2)
 	char	*tab_out;
 	size_t	len;
 
+	if (!s1)
+		return (s2);
+	if (!s2)
+		return (s1);
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	tab_out = ft_strnew(len);
 	if (!tab_out)

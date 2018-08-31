@@ -5,8 +5,8 @@
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/04/24 10:16:39 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/24 10:16:45 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/11/24 11:55:51 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/08/28 13:32:04 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -14,25 +14,21 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <sys/types.h>
-# include <sys/uio.h>
-# include <unistd.h>
 # include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
 # include "libft.h"
 
-# define EOF (-1)
-# define BUFF_SIZE 4096
+# define BUFF_SIZE	2048
 
-typedef	struct	s_getch
+typedef struct	s_buffer
 {
 	int			fd;
-	int			n;
-	char		buf[BUFF_SIZE];
-	char		*bufp;
-}				t_getch;
+	size_t		start;
+	char		*buf;
+	char		*ptr;
+}				t_buffer;
 
-int				get_next_line(const int fd, char **line);
-static t_getch	*set_getch(const int fd);
-static t_list	*tog_lst(t_list **lst, const int fd);
+int				get_next_line(int const fd, char **line);
 
 #endif
