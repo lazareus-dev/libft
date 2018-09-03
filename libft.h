@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/08/31 11:42:14 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/02 15:19:28 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -64,6 +64,9 @@ void				*ft_memalloc(size_t size);
 void				*ft_memrealloc(void *s1, void *s2, size_t size);
 void				ft_memdel(void **ap);
 char				**ft_strtab_alloc(size_t size);
+int					ft_match(char *s1, char *s2);
+size_t				ft_expand_str_part(char **str, char *ptr, size_t size,
+		char *replace);
 
 /*
 ** String functions

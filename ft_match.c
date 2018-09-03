@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strsub.c                                      .::    .:/ .      .::   */
+/*   ft_match.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/24 18:22:34 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/07 19:46:38 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/09/02 13:51:21 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/09/02 13:52:31 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+int	ft_match(char *s1, char *s2)
 {
-	char	*str;
-	size_t	i;
-
-	if (start > ft_strlen(s))
-		return (NULL);
-	if (!len)
-		return (NULL);
-	if (s)
-	{
-		str = ft_strnew(len);
-		if (!str)
-			return (NULL);
-		i = 0;
-		while (i < len && s[start] != '\0')
-		{
-			str[i] = s[start];
-			i++;
-			start++;
-		}
-		return (str);
-	}
-	return (NULL);
+	if (*s1 == '\0' && *s2 == '\0')
+		return (1);
+	if (*s1 == '\0' && *s2 == '*')
+		return (ft_match(s1, s2 + 1));
+	if ((*s1 == '\0' && *s2 != '*'))
+		return (0);
+	if (*s1 == *s2 && *s2 != '*')
+		return (ft_match(s1 + 1, s2 + 1));
+	if (*s2 == '*')
+		return (ft_match(s1 + 1, s2) || ft_match(s1, s2 + 1));
+	return (0);
 }
