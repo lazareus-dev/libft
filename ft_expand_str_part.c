@@ -13,30 +13,35 @@
 
 #include "libft.h"
 
+static char	*triple_join(char *s1, char *s2, char *s3)
+{
+	char	*merged;
+
+	merged = NULL;
+	if (s1)
+		merged = ft_strdup(s1);
+	if (s2)
+		merged = ft_str_joinordup(merged, s2);
+	if (s3)
+		merged = ft_str_joinordup(merged, s3);
+	return (merged);
+}
+
 size_t	ft_expand_str_part(char **str, char *ptr, size_t size, char *replace)
 {
 	size_t	len_start;
-	char	*tmp;
+	size_t	ret;
 	char	*start;
 	char	*end;
-	size_t	ret;
 
 	start = ft_strsub((*str), 0, (ptr - (*str)));
 	len_start = ft_strlen(start);
 	end = ft_strsub((*str), (len_start + size + 1),
 			(ft_strlen(*str) - (len_start + size)));
 	ft_strdel(str);
-	if (start)
-		tmp = ft_strjoin(start, replace);
-	else
-		tmp = ft_strdup(replace);
-	if (end)
-		(*str) = ft_strjoin(tmp, end);
-	else
-		(*str) = ft_strdup(tmp);
-	ret = ft_strlen(start) + ft_strlen(replace) + 1;
+	(*str) = triple_join(start, replace, end);	
+	ret = ft_strlen(start) + ft_strlen(replace);
     ft_strdel(&start);
     ft_strdel(&end);
-    ft_strdel(&tmp);
 	return (ret);
 }
