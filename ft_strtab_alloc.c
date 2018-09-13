@@ -18,6 +18,8 @@ char	**ft_strtab_alloc(size_t size)
 	char	**tab;
 	size_t	i;
 
+	if (size <= 1)
+		return (NULL);
 	i = 0;
 	if (!(tab = (char **)malloc(sizeof(char *) * size)))
 		return (NULL);

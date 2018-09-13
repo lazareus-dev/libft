@@ -13,11 +13,15 @@
 
 #include "libft.h"
 
-void	ft_putstr_tab(char **tab)
+void	ft_putstr_tab(char **tab, char separator)
 {
 	int i;
 
 	i = 0;
 	while (tab[i])
-		ft_putendl(tab[i++]);
+	{
+		ft_putstr(tab[i++]);
+		ft_putchar(separator);
+		ft_putchar('\n');
+	}
 }
