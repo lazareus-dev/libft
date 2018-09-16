@@ -22,6 +22,6 @@ void	ft_putstr_tab(char **tab, char separator)
 	{
 		ft_putstr(tab[i++]);
 		ft_putchar(separator);
-		ft_putchar('\n');
 	}
+	ft_putchar('\n');
 }

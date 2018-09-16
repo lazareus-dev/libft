@@ -39,6 +39,12 @@ typedef struct		s_hash_table
 	t_list			**table;
 }					t_hash_table;
 
+typedef struct		s_stack
+{
+	void			*content;
+	struct s_stack	*next;
+}					t_stack;
+
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, void const *src, size_t n);
@@ -149,6 +155,14 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstpushback(t_list **lst, t_list *node);
 void				ft_lstrdel(void *content, size_t content_size);
 t_headlst			*ft_init_headlst(void);
+
+/*
+** Stack functions
+*/
+
+void				push_stack(t_stack **head, void *content);
+void				*pop_stack(t_stack **head);
+void				*peek_stack(t_stack *head);
 
 int					ft_isblank(int c);
 int					ft_isspace(int c);
