@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/10 19:22:27 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/21 18:27:33 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,6 +18,8 @@
 # include <wchar.h>
 # include <stdlib.h>
 # include "./ft_printf/ft_printf.h"
+
+# define ALPHABET_SIZE 26
 
 typedef struct		s_list
 {
@@ -44,6 +46,12 @@ typedef struct		s_stack
 	void			*content;
 	struct s_stack	*next;
 }					t_stack;
+
+typedef struct		s_trie
+{
+	struct s_trie	*character[ALPHABET_SIZE];
+	short			is_leaf;
+}					t_trie;
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -163,6 +171,16 @@ t_headlst			*ft_init_headlst(void);
 void				push_stack(t_stack **head, void *content);
 void				*pop_stack(t_stack **head);
 void				*peek_stack(t_stack *head);
+
+/*
+** Trie functions
+*/
+
+t_trie				*ft_new_trie(void);
+void				ft_push_trie(t_trie **head, char *str);
+int					ft_trie_search(t_trie *head, char *str);
+int					ft_trie_has_children(t_trie *node);
+int					ft_del_trie(t_trie **node, char *str);
 
 int					ft_isblank(int c);
 int					ft_isspace(int c);
