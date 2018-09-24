@@ -93,6 +93,7 @@ char				*ft_strdup(char const *s1);
 char				*ft_strndup(const char *s, size_t n);
 int					ft_strcmp(char const *s1, char const *s2);
 int					ft_strncmp(char const *s1, char const *s2, size_t n);
+size_t				ft_str_nbrequ(char *ref, char *cmp);
 char				*ft_strcpy(char *dst, char const *src);
 char				*ft_strncpy(char *dst, char const *src, size_t len);
 char				*ft_strcat(char *s1, char const *s2);
@@ -230,6 +231,7 @@ char				*ft_getenv(const char *name, char **environ);
 int					ft_hash_addbin(t_hash_table *hashtable, char *key,
 		char *val);
 t_list				*ft_hash_getbin(t_hash_table *hashtable, char *str);
+char				*ft_get_last_path_elem(char *path);
 
 /*
 ** Hash functions

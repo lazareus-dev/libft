@@ -47,7 +47,8 @@ SRCS	= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		  ft_create_hash_table.c ft_hash_addkv.c ft_hash_findkv.c \
 		  ft_hash_getbin.c ft_hash_addbin.c ft_putstr_reveal_blanks.c \
 		  ft_strtab_alloc.c ft_is_posixname.c ft_is_posixname_char.c \
-		  ft_match.c ft_expand_str_part.c ft_stack.c \
+		  ft_match.c ft_expand_str_part.c ft_stack.c ft_get_last_path_elem.c \
+		  ft_str_nbrequ.c \
 		  \
 		  ft_trie_search.c ft_new_trie.c ft_push_trie.c ft_free_trie.c 
 
