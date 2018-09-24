@@ -6,7 +6,7 @@
 #    By: tle-coza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 11:09:59 by tle-coza          #+#    #+#              #
-#    Updated: 2018/09/21 18:40:58 by tle-coza    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/09/22 10:25:56 by tle-coza    ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ SRCS	= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		  ft_strtab_alloc.c ft_is_posixname.c ft_is_posixname_char.c \
 		  ft_match.c ft_expand_str_part.c ft_stack.c \
 		  \
-		  ft_trie_search.c ft_new_trie.c ft_push_trie.c 
+		  ft_trie_search.c ft_new_trie.c ft_push_trie.c ft_free_trie.c 
 
 
 PFSRC	= ft_printf.c check_spec.c get_spec.c parse_args.c argsize.c \

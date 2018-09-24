@@ -13,6 +13,27 @@
 
 #include "libft.h"
 
+void	ft_lststr_del(t_list **head)
+{
+	t_list	*del;
+	t_list	*hook;
+	char	*str;
+
+	if (!head)
+		return ;
+	del = *head;
+	while (del)
+	{
+		hook = del->next;
+		str = (char *)del->content;
+		ft_strdel(&str);
+		free(del);
+		del = hook;
+	}
+	del = NULL;
+	head = NULL;
+}
+
 void	ft_lstrdel(void *content, size_t content_size)
 {
 	char	*str;

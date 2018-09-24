@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_push_trie.c                                   .::    .:/ .      .::   */
+/*   ft_free_trie.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/09/21 18:14:51 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/21 18:34:01 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/09/22 10:18:54 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/09/22 10:24:43 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_push_trie(t_trie **head, char *str)
+void	ft_free_trie(t_trie **head)
 {
-	t_trie	*node;
+	t_trie	*del;
 	int		index;
 
-	if (!head || !str)
+	if (!head || !(*head))
 		return ;
-	node = *head;
-	while (*str)
+	del = *head;
+	index = 0;
+	while (index < ALPHABET_SIZE)
 	{
-		index = *str - 'a';
-		if (!node->character[index])
-			node->character[index] = ft_new_trie();
-		node = node->character[index];
-		str++;
+		ft_free_trie(&del->character[index]);
+		index++;
 	}
-	node->is_leaf = 1;
+	free(del);
+	del = NULL;
+	head = NULL;
 }

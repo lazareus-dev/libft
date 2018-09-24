@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/21 18:27:33 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/22 14:43:26 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -162,6 +162,7 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstpushback(t_list **lst, t_list *node);
 void				ft_lstrdel(void *content, size_t content_size);
+void				ft_lststr_del(t_list **head);
 t_headlst			*ft_init_headlst(void);
 
 /*
@@ -181,6 +182,7 @@ void				ft_push_trie(t_trie **head, char *str);
 int					ft_trie_search(t_trie *head, char *str);
 int					ft_trie_has_children(t_trie *node);
 int					ft_del_trie(t_trie **node, char *str);
+void				ft_free_trie(t_trie **head);
 
 int					ft_isblank(int c);
 int					ft_isspace(int c);

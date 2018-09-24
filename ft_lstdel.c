@@ -20,10 +20,10 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 
 	while (*alst)
 	{
-		hook = *alst;
+		hook = (*alst)->next;
 		(*del)((*alst)->content, (*alst)->content_size);
 		free(*alst);
-		*alst = hook->next;
+		*alst = hook;
 	}
 	*alst = NULL;
 }
