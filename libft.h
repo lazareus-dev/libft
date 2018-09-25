@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/22 14:43:26 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/25 16:48:22 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,7 +19,11 @@
 # include <stdlib.h>
 # include "./ft_printf/ft_printf.h"
 
-# define ALPHABET_SIZE 26
+# define ALPHABET_SIZE	26
+
+# define S_QUOTE		1
+# define D_QUOTE		2
+# define SP_BACKSLASH	"$`\"\\\n"
 
 typedef struct		s_list
 {
@@ -232,6 +236,7 @@ int					ft_hash_addbin(t_hash_table *hashtable, char *key,
 		char *val);
 t_list				*ft_hash_getbin(t_hash_table *hashtable, char *str);
 char				*ft_get_last_path_elem(char *path);
+int					ft_is_quoted(char *str, char *ptr);
 
 /*
 ** Hash functions

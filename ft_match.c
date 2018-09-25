@@ -33,7 +33,10 @@ int	ft_match(char *s1, char *s2)
 	char	*comp;
 	int		ret;
 
-	comp = ft_strjoin(s2, "*");
+	if (s2)
+		comp = ft_strjoin(s2, "*");
+	else
+		comp = ft_strdup("*");
 	ret = match(s1, comp);
 	ft_strdel(&comp);
 	return (ret);
