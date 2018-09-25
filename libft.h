@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/25 16:48:22 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/25 17:06:19 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,7 +23,7 @@
 
 # define S_QUOTE		1
 # define D_QUOTE		2
-# define SP_BACKSLASH	"$`\"\\\n"
+# define SPCH_BACKSLASH	"$`\"\\\n"
 
 typedef struct		s_list
 {

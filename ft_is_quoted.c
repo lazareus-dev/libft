@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/09/25 16:38:54 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/25 16:48:56 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/25 17:06:30 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,7 +22,7 @@ static int	is_backslash_quoted(char *p, int *quoted, int *escaped)
 		ret = 1;
 	else if (*quoted == D_QUOTE)
 	{
-		if (*(p + 1) && ft_strchr(SP_BACKSLASH, *(p + 1)))
+		if (*(p + 1) && ft_strchr(SPCH_BACKSLASH, *(p + 1)))
 		{
 			ret = 0;
 			*escaped = 1;
