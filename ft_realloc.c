@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:22:29 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2017/11/24 18:30:22 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/24 18:52:34 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,6 +28,6 @@ char	*ft_realloc(char *s1, char *s2)
 		ft_strcpy(tab_out, s1);
 		ft_strcat(tab_out, s2);
 	}
-	free(s1);
+	ft_strdel(&s1);
 	return (tab_out);
 }
