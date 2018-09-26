@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/06/12 17:50:39 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/12 18:01:42 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/26 11:34:00 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,5 +25,6 @@ void	ft_lstpushback(t_list **lst, t_list *node)
 		while (run->next)
 			run = run->next;
 		run->next = node;
+		node->prev = run;
 	}
 }

@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_lstnew.c                                      .::    .:/ .      .::   */
+/*   ft_get_path.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/24 18:22:27 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/26 11:33:33 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/09/26 10:36:42 by tle-coza     #+#   ##    ##    #+#       */
+/*   Updated: 2018/09/26 10:36:44 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+char	*ft_get_path(char *str)
 {
-	t_list *lstnew;
+	char *path;
+	char *last_slash;
 
-	if (!(lstnew = (t_list *)malloc(sizeof(*lstnew))))
+	if (!(last_slash = ft_strrchr(str, '/')))
 		return (NULL);
-	if (!content)
-	{
-		lstnew->content = NULL;
-		lstnew->content_size = 0;
-	}
-	else
-	{
-		if (!(lstnew->content = malloc(content_size)))
-			return (NULL);
-		ft_memcpy(lstnew->content, content, content_size);
-		lstnew->content_size = content_size;
-	}
-	lstnew->prev = NULL;
-	lstnew->next = NULL;
-	return (lstnew);
+	path = ft_strsub(str, 0, (last_slash + 1) - str);
+	return (path);
 }

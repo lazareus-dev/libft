@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/25 17:06:19 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/26 11:28:45 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,6 +29,7 @@ typedef struct		s_list
 {
 	void			*content;
 	size_t			content_size;
+	struct s_list	*prev;
 	struct s_list	*next;
 }					t_list;
 
@@ -96,6 +97,7 @@ size_t				ft_wcbytelen(wchar_t wchar);
 char				*ft_strdup(char const *s1);
 char				*ft_strndup(const char *s, size_t n);
 int					ft_strcmp(char const *s1, char const *s2);
+int					ft_strcmp_void(void *p1, void *p2);
 int					ft_strncmp(char const *s1, char const *s2, size_t n);
 size_t				ft_str_nbrequ(char *ref, char *cmp);
 char				*ft_strcpy(char *dst, char const *src);
@@ -165,7 +167,9 @@ void				ft_lstfree(t_list **alst);
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-void				ft_lstpushback(t_list **lst, t_list *node);
+void				ft_lstpushback(t_list **head, t_list *node);
+void				ft_lst_insertionsort(t_list **head, t_list *node,
+		int (*cmp)(void *a, void *b));
 void				ft_lstrdel(void *content, size_t content_size);
 void				ft_lststr_del(t_list **head);
 t_headlst			*ft_init_headlst(void);
@@ -237,6 +241,7 @@ int					ft_hash_addbin(t_hash_table *hashtable, char *key,
 t_list				*ft_hash_getbin(t_hash_table *hashtable, char *str);
 char				*ft_get_last_path_elem(char *path);
 int					ft_is_quoted(char *str, char *ptr);
+char				*ft_get_path(char *str);
 
 /*
 ** Hash functions

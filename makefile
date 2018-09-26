@@ -6,7 +6,7 @@
 #    By: tle-coza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 11:09:59 by tle-coza          #+#    #+#              #
-#    Updated: 2018/09/25 16:43:53 by tle-coza    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/09/26 13:23:27 by tle-coza    ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,8 @@ SRCS	= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		  ft_hash_getbin.c ft_hash_addbin.c ft_putstr_reveal_blanks.c \
 		  ft_strtab_alloc.c ft_is_posixname.c ft_is_posixname_char.c \
 		  ft_match.c ft_expand_str_part.c ft_stack.c ft_get_last_path_elem.c \
-		  ft_str_nbrequ.c ft_is_quoted.c\
+		  ft_str_nbrequ.c ft_is_quoted.c ft_get_path.c ft_strcmp_void.c \
+		  ft_lst_insertionsort.c \
 		  \
 		  ft_trie_search.c ft_new_trie.c ft_push_trie.c ft_free_trie.c 
 
