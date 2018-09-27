@@ -6,14 +6,14 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/09/14 15:34:24 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/14 15:34:38 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/27 10:50:48 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_stack *new_stack(void *content)
+t_stack	*new_stack(void *content)
 {
 	t_stack	*node;
 
@@ -49,8 +49,8 @@ void	*pop_stack(t_stack **head)
 	tmp = *head;
 	*head = (*head)->next;
 	popped = tmp->content;
-//	free(tmp);
-	return popped;
+	free(tmp);
+	return (popped);
 }
 
 void	*peek_stack(t_stack *head)

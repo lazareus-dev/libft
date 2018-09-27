@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/09/26 11:35:15 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/26 13:30:45 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/27 10:49:26 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -44,5 +44,5 @@ void	ft_lst_insertionsort(t_list **head, t_list *node,
 		while (run->next && ((*cmp)(node->content, run->next->content) > 0))
 			run = run->next;
 		insert_node(&run, node);
-	}	
+	}
 }

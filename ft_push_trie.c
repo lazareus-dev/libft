@@ -6,14 +6,14 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/09/21 18:14:51 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/21 18:34:01 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/27 10:49:51 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_push_trie(t_trie **head, char *str)
+void	ft_push_trie(t_trie **head, char *str)
 {
 	t_trie	*node;
 	int		index;
