@@ -242,6 +242,8 @@ t_list				*ft_hash_getbin(t_hash_table *hashtable, char *str);
 char				*ft_get_last_path_elem(char *path);
 int					ft_is_quoted(char *str, char *ptr);
 char				*ft_get_path(char *str);
+int					ft_get_fd_read(char *file);
+int					ft_get_fd_write(char *file, int append);
 
 /*
 ** Hash functions
