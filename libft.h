@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/26 11:28:45 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/28 14:02:59 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,6 +24,9 @@
 # define S_QUOTE		1
 # define D_QUOTE		2
 # define SPCH_BACKSLASH	"$`\"\\\n"
+
+# define FILE_TRUNC			0
+# define FILE_APPEND		1
 
 typedef struct		s_list
 {
