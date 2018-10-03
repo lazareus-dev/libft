@@ -6,7 +6,7 @@
 /*   By: tle-coza <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 18:28:36 by tle-coza     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/28 14:02:59 by tle-coza    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/03 15:16:33 by tle-coza    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,8 +21,10 @@
 
 # define ALPHABET_SIZE	26
 
+# define UN_QUOTED		0
 # define S_QUOTE		1
 # define D_QUOTE		2
+# define BACK_SLASH		3
 # define SPCH_BACKSLASH	"$`\"\\\n"
 
 # define FILE_TRUNC			0
@@ -244,6 +246,7 @@ int					ft_hash_addbin(t_hash_table *hashtable, char *key,
 t_list				*ft_hash_getbin(t_hash_table *hashtable, char *str);
 char				*ft_get_last_path_elem(char *path);
 int					ft_is_quoted(char *str, char *ptr);
+int					ft_ptr_is_quoted(char *str, char *ptr);
 char				*ft_get_path(char *str);
 int					ft_get_fd_read(char *file);
 int					ft_get_fd_write(char *file, int append);
